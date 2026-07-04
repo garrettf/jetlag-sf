@@ -45,7 +45,6 @@ export const questions = [
   photo("tallest-sightline", "the tallest structure in your current sightline", "Tallest from the hider’s perspective. Include the top and both sides."),
   photo("you", "you", "Selfie mode, arm extended, perpendicular to the ground, default lens, no zoom."),
   photo("sky", "the sky", "Place the phone on the ground and shoot straight up with no zoom."),
-  photo("trace-path", "a trace of the nearest street or path", "Trace intersection to intersection on a map-visible street/path.", "added-medium"),
   photo("two-buildings", "two buildings", "Show the bottom through no more than four stories.", "added-medium"),
   photo("restaurant", "a restaurant interior", "No zoom; take the photo through a window from outside.", "added-medium"),
   photo("park", "a park", "No zoom, perpendicular to the ground, at least five feet from obstructions. Qualifying Google categories require more than five reviews.", "added-medium"),
