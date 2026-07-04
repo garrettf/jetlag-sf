@@ -38,7 +38,7 @@ export const houseRules = [
     id: "definitions",
     label: "Definitions",
     title: "SF-specific nouns",
-    summary: "4th administrative division means Supervisorial District; mountain means a curated hill over 400 ft; park means dog park for matching and measuring.",
+    summary: "4th administrative division means Supervisor District; mountain is replaced by a curated hill list over 400 ft; park means dog park for matching and measuring.",
     details: ["Coastline includes both the Pacific Ocean and San Francisco Bay.", "See each question card for the exact allowed set."],
   },
 ];
@@ -53,10 +53,10 @@ export const hiderRules = [
 ];
 
 export const seekerRules = [
-  { title: "Move together", text: "Seekers travel as one team and may ask only after the previous question is answered." },
+  { title: "Travel as one team", text: "All seekers move together throughout the round." },
+  { title: "Ask one question at a time", text: "Do not ask another question until the hider answers the previous one." },
   { title: "Send exact locations", text: "For measuring, radar, and thermometer questions, share clear map pins and the requested context." },
-  { title: "Use the SF definitions", text: "Check question notes before measuring; several categories use curated local lists." },
-  { title: "Watch the card economy", text: "Matching and measuring give the hider 3 draw / keep 1; radar and thermometer 2 / 1; photo 1 / 1." },
-  { title: "Trigger endgame deliberately", text: "Endgame starts when you are off transit inside the hiding zone and stays active thereafter." },
-  { title: "Confirm physically", text: "Do not use Street View to match photo clues or verify a station from afar." },
+  { title: "No Street View", text: "Do not use Street View to match photo clues or verify stations from afar. Satellite imagery is allowed." },
+  { title: "Know when endgame starts", text: "Endgame begins when the team is off transit inside the hiding zone; once active, it stays active." },
+  { title: "Use questions in stages", text: "Use broad comparisons to reduce the map, then radars, photos, and physical searching to confirm the zone." },
 ];

@@ -7,8 +7,8 @@ export const questions = [
   matching("transit-line", "Transit line", "Ask only while riding transit. Answer yes if that exact service stops within ¼ mile of the hider’s chosen hiding station—not simply near the hider.", "hiding-zones", "modified"),
   matching("station-length", "Station name length", "Ignore the word “Station”; count spaces, hyphens, ampersands, and slashes. Ignore periods in street abbreviations."),
   matching("street-path", "Street or path", "Use the official base-game definition."),
-  matching("district", "Supervisorial district", "This is SF Supervisorial District D1–D11.", "district", "modified"),
-  matching("mountain", "Mountain", "Use the curated list of sixteen SF hills at least 400 ft high.", "mountain", "modified"),
+  { ...matching("district", "Supervisor district", "This is SF Supervisor District D1–D11.", "district", "modified"), prompt: "Is your supervisor district the same as mine?" },
+  { ...matching("mountain", "Hill", "This replaces the base game’s mountain definition. Use the curated list of sixteen SF hills at least 400 ft high.", "mountain", "modified"), displayTitle: "<s>Mountain</s> Hill", prompt: "Is your nearest hill the same as mine?" },
   matching("landmass", "Landmass", "Possible results are Treasure Island, Strawberry Hill, or the rest of San Francisco."),
   matching("dog-park", "Dog park", "Dog parks replace the generic park category.", "dog-park", "modified"),
   matching("golf", "Golf course", "Use the eight qualifying outdoor golf courses.", "golf"),
@@ -24,7 +24,7 @@ export const questions = [
   measuring("sea-level", "Sea level", "Use the official base-game definition."),
   measuring("water", "Body of water", "The body must appear blue on Google Maps."),
   measuring("coastline", "Coastline", "Use the nearer of the Pacific Ocean or San Francisco Bay.", undefined, "modified"),
-  measuring("mountain", "Mountain", "Use the curated list of sixteen SF hills at least 400 ft high.", "mountain", "modified"),
+  { ...measuring("mountain", "Hill", "This replaces the base game’s mountain definition. Use the curated list of sixteen SF hills at least 400 ft high.", "mountain", "modified"), displayTitle: "<s>Mountain</s> Hill", prompt: "Compared to me, are you closer to or further from a hill?" },
   measuring("dog-park", "Dog park", "Dog parks replace the generic park category.", "dog-park", "modified"),
   measuring("aquarium", "Aquarium", "Allowed for measuring only.", "aquarium"),
   measuring("golf", "Golf course", "Use the same qualifying set as matching.", "golf"),
@@ -56,9 +56,9 @@ export const questions = [
 ];
 
 export const categoryInfo = {
-  Matching: { answer: "Yes / no", timing: "5 min", use: "Divide the map by nearest-feature regions." },
-  Measuring: { answer: "Closer / farther", timing: "5 min", use: "Cut the map with a distance comparison." },
-  Radar: { answer: "Yes / no", timing: "5 min", use: "Confirm or eliminate a circle around you." },
-  Thermometer: { answer: "Hotter / colder", timing: "5 min", use: "Check whether a movement direction helped." },
-  Photo: { answer: "Photo / null", timing: "10 min", use: "Read the hider’s immediate environment." },
+  Matching: { phrasing: "Is your nearest ___ the same as mine?", answer: "Yes / no", timing: "5 min" },
+  Measuring: { phrasing: "Compared to me, are you closer to or further from ___?", answer: "Closer / further", timing: "5 min" },
+  Radar: { phrasing: "Are you within ___ of me?", answer: "Yes / no", timing: "5 min" },
+  Thermometer: { phrasing: "After traveling ___, am I hotter or colder?", answer: "Hotter / colder", timing: "5 min" },
+  Photo: { phrasing: "Send me a photo of ___.", answer: "Photo / null", timing: "10 min" },
 };

@@ -1,10 +1,9 @@
 export const site = {
   title: "Jet Lag SF",
-  subtitle: "Hide + Seek field guide",
-  version: "SF rules · Small+",
   startingPoint: "Van Ness & Market",
   zoneRadius: "¼ mile",
   hidingTime: "30 minutes",
+  atlasMap: "https://app.atlas.co/shared/2CFagzDAW1NEUYBTteYd?loc=-122.4801%2C37.7817%2C13.6715z&public=true",
 };
 
 export const navItems = [
@@ -16,8 +15,10 @@ export const navItems = [
 ];
 
 export const quickLinks = [
-  { href: "seekers.html", eyebrow: "I’m seeking", title: "Run the search", text: "Question flow, tactics, and endgame checks.", tone: "red" },
-  { href: "hiders.html", eyebrow: "I’m hiding", title: "Protect the zone", text: "Timers, cards, photos, movement, and endgame.", tone: "blue" },
-  { href: "questions.html", eyebrow: "At the table", title: "Choose a question", text: "Filter by category, cost, or map availability.", tone: "yellow" },
-  { href: "maps.html", eyebrow: "On the move", title: "Open a diagram", text: "SF-specific Voronoi maps and zone references.", tone: "green" },
+  { href: "questions.html", title: "Questions", text: "Allowed questions, costs, and clarifications.", tone: "yellow" },
+  { href: "seekers.html", title: "Seekers", text: "Rules and useful reminders.", tone: "red" },
+  { href: "hiders.html", title: "Hiders", text: "Zone, cards, photos, and endgame.", tone: "blue" },
+  { href: "house-rules.html", title: "Rule changes", text: "Everything that differs from the official game.", tone: "green" },
+  { href: "maps.html", title: "Diagrams", text: "Voronoi maps and zone references.", tone: "blue" },
+  { href: "rules.html", title: "Official rules", text: "Full readable copy of the base rules.", tone: "red" },
 ];
