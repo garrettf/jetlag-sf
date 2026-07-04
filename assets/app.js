@@ -21,11 +21,8 @@ function shell(content) {
   `);
   app.innerHTML = content;
   document.body.insertAdjacentHTML("beforeend", `
-    <footer class="site-footer">
-      <a class="atlas-link" href="${site.atlasMap}" target="_blank" rel="noreferrer"><span><strong>Open Atlas game map</strong><small>Hiding zones and valid stations</small></span><b aria-hidden="true">↗</b></a>
-    </footer>
     <nav class="bottom-nav" aria-label="Primary navigation">
-      ${navItems.map(item => `<a class="nav-item ${navActive(item.page) ? "active" : ""}" href="${item.href}"><b aria-hidden="true">${item.icon}</b>${item.label}</a>`).join("")}
+      ${navItems.map(item => `<a class="nav-item ${navActive(item.page) ? "active" : ""}" href="${item.href}"${item.external ? ' target="_blank" rel="noreferrer"' : ""}><b aria-hidden="true">${item.icon}</b>${item.label}</a>`).join("")}
     </nav>
   `);
 }
@@ -45,16 +42,8 @@ function pageHeading(title) {
 
 function renderHome() {
   shell(`<main class="page">
-    ${pageHeading("Jet Lag: Hide + Seek — SF")}
-    <div class="stat-strip">
-      <div class="stat"><span>Start</span><strong>${site.startingPoint}</strong></div>
-      <div class="stat"><span>Zone</span><strong>${site.zoneRadius}</strong></div>
-      <div class="stat"><span>Hide time</span><strong>${site.hidingTime}</strong></div>
-    </div>
-    <section class="section section-tight">
-      <div class="alert"><span class="alert-icon">⚑</span><div><strong>Sticky endgame</strong><p>Once seekers are off transit inside the zone, the hider freezes until found—even if the seekers leave again.</p></div></div>
-    </section>
-    <section class="section"><h2>Reference</h2><div class="quick-grid">${quickLinks.map(link => `<a class="quick-card ${link.tone}" href="${link.href}"><div><h3>${link.title}</h3><p>${link.text}</p></div><b aria-hidden="true">→</b></a>`).join("")}</div></section>
+    ${pageHeading("Contents")}
+    <div class="quick-grid">${quickLinks.map(link => `<a class="quick-card ${link.tone}" href="${link.href}"><span class="quick-icon" aria-hidden="true">${link.icon}</span><div><h3>${link.title}</h3><p>${link.text}</p></div><b aria-hidden="true">→</b></a>`).join("")}</div>
   </main>`);
 }
 
@@ -76,14 +65,20 @@ function renderGuide(role, items) {
 }
 
 function renderQuestions() {
+  const categories = Object.keys(categoryInfo);
+  const jumpOptions = currentCategory => categories.map(category => `<option value="${category.toLowerCase()}"${category === currentCategory ? " selected" : ""}>${category}</option>`).join("");
   const categorySections = Object.entries(categoryInfo).map(([category, info]) => {
     const categoryQuestions = questions.filter(question => question.category === category);
     return `<section class="question-section" id="${category.toLowerCase()}">
-      <header class="question-section-head"><h2>${category}</h2><div class="question-facts"><span><b>Phrasing</b>${info.phrasing}</span><span><b>Cost</b>${categoryQuestions[0]?.cost}</span><span><b>Answer</b>${info.answer}</span><span><b>Time</b>${info.timing}</span></div></header>
+      <div class="question-section-toolbar"><h2>${category}</h2><label><span>Jump to</span><select class="question-section-select" aria-label="Jump to another question type">${jumpOptions(category)}</select></label></div>
+      <div class="question-facts"><span><b>Phrasing</b>${info.phrasing}</span><span><b>Cost</b>${categoryQuestions[0]?.cost}</span><span><b>Answer</b>${info.answer}</span><span><b>Time</b>${info.timing}</span></div>
       <div class="compact-question-list">${categoryQuestions.map(questionCard).join("")}</div>
     </section>`;
   }).join("");
-  shell(`<main class="page">${pageHeading("Questions")}<nav class="question-jump" aria-label="Question types">${Object.keys(categoryInfo).map(category => `<a href="#${category.toLowerCase()}">${category}</a>`).join("")}</nav>${categorySections}</main>`);
+  shell(`<main class="page">${pageHeading("Questions")}<nav class="question-jump" aria-label="Question types">${categories.map(category => `<a href="#${category.toLowerCase()}">${category}</a>`).join("")}</nav>${categorySections}</main>`);
+  document.querySelectorAll(".question-section-select").forEach(select => select.addEventListener("change", () => {
+    location.hash = select.value;
+  }));
 }
 
 function questionCard(question) {

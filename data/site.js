@@ -11,14 +11,15 @@ export const navItems = [
   { page: "questions", href: "questions.html", label: "Questions", icon: "?" },
   { page: "seekers", href: "seekers.html", label: "Seekers", icon: "◎" },
   { page: "hiders", href: "hiders.html", label: "Hiders", icon: "◉" },
+  { page: "atlas", href: site.atlasMap, label: "Atlas", icon: "🗺", external: true },
   { page: "more", href: "more.html", label: "More", icon: "•••" },
 ];
 
 export const quickLinks = [
-  { href: "questions.html", title: "Questions", text: "Allowed questions, costs, and clarifications.", tone: "yellow" },
-  { href: "seekers.html", title: "Seekers", text: "Rules and useful reminders.", tone: "red" },
-  { href: "hiders.html", title: "Hiders", text: "Zone, cards, photos, and endgame.", tone: "blue" },
-  { href: "house-rules.html", title: "Rule changes", text: "Everything that differs from the official game.", tone: "green" },
-  { href: "maps.html", title: "Diagrams", text: "Voronoi maps and zone references.", tone: "blue" },
-  { href: "rules.html", title: "Official rules", text: "Full readable copy of the base rules.", tone: "red" },
+  { href: "questions.html", icon: "❓", title: "Questions", text: "Allowed questions, costs, and clarifications.", tone: "yellow" },
+  { href: "seekers.html", icon: "🔎", title: "Seekers", text: "Rules and useful reminders.", tone: "red" },
+  { href: "hiders.html", icon: "🙈", title: "Hiders", text: "Zone, cards, photos, and endgame.", tone: "blue" },
+  { href: "house-rules.html", icon: "🛠️", title: "Rule changes", text: "Everything that differs from the official game.", tone: "green" },
+  { href: "maps.html", icon: "🗺️", title: "Diagrams", text: "Voronoi maps and zone references.", tone: "blue" },
+  { href: "rules.html", icon: "📖", title: "Official rules", text: "Full readable copy of the base rules.", tone: "red" },
 ];
