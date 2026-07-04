@@ -1,0 +1,12 @@
+{
+  "name": "jetlag-sf-reference",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:content": "node scripts/build-content.mjs",
+    "serve": "python3 -m http.server 4173"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.2"
+  }
+}

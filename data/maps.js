@@ -1,0 +1,18 @@
+export const maps = [
+  { id: "boundaries", title: "Game boundaries", file: "assets/maps/boundaries.webp", group: "Game map", note: "SF city limits and exclusions." },
+  { id: "hiding-zones", title: "Valid hiding-zone coverage", file: "assets/maps/hiding-zones.webp", group: "Game map", note: "Approximate ¼-mile coverage around approved stations." },
+  { id: "district", title: "Supervisorial districts", file: "assets/maps/supervisorial-districts.webp", group: "Matching", note: "Used for 4th Administrative Division." },
+  { id: "parking", title: "Parking permit colors", file: "assets/maps/parking-permit-areas.webp", group: "Experimental", note: "Used for the homebrew parking-zone question." },
+  { id: "mountain", title: "Nearest mountain", file: "assets/maps/nearest-mountain.webp", group: "Matching", note: "Curated SF hills above 400 ft." },
+  { id: "dog-park", title: "Nearest dog park", file: "assets/maps/nearest-dog-park.webp", group: "Matching", note: "Dog parks replace generic parks." },
+  { id: "aquarium", title: "Nearest aquarium", file: "assets/maps/nearest-aquarium.webp", group: "Measuring", note: "Measuring only; matching aquarium is not in play." },
+  { id: "golf", title: "Nearest golf course", file: "assets/maps/nearest-golf-course.webp", group: "Matching", note: "Eight qualifying courses." },
+  { id: "movie", title: "Nearest movie theater", file: "assets/maps/nearest-movie-theater.webp", group: "Matching", note: "Indoor, open, qualifying movie theaters." },
+  { id: "hospital", title: "Nearest hospital", file: "assets/maps/nearest-hospital.webp", group: "Matching", note: "Hospitals with an emergency department." },
+  { id: "library", title: "Nearest library", file: "assets/maps/nearest-library.webp", group: "Matching", note: "SFPL branches and Treasure Island kiosk." },
+  { id: "consulate-1", title: "Nearest foreign consulate · NW", file: "assets/maps/nearest-consulate-1.webp", group: "Matching", note: "One of four detailed consulate diagrams." },
+  { id: "consulate-2", title: "Nearest foreign consulate · NE", file: "assets/maps/nearest-consulate-2.webp", group: "Matching", note: "One of four detailed consulate diagrams." },
+  { id: "consulate-3", title: "Nearest foreign consulate · SW", file: "assets/maps/nearest-consulate-3.webp", group: "Matching", note: "One of four detailed consulate diagrams." },
+  { id: "consulate-4", title: "Nearest foreign consulate · SE", file: "assets/maps/nearest-consulate-4.webp", group: "Matching", note: "One of four detailed consulate diagrams." },
+  { id: "farmers-market", title: "Nearest farmers market", file: "assets/maps/nearest-farmers-market.webp", group: "Experimental", note: "Homebrew question; currently untested." },
+];
