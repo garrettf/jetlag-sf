@@ -30,13 +30,10 @@ await promisify(execFile)("unzip", ["-q", path.join(references, "Jet-Lag-H-S-SF-
 await fs.mkdir(mapDirectory, { recursive: true });
 
 const imageMap = {
-  "image8.png": "boundaries.webp",
-  "image14.png": "hiding-zones.webp",
   "image3.png": "supervisor-districts.webp",
   "image5.jpg": "parking-permit-areas.webp",
   "image16.png": "nearest-mountain.webp",
   "image13.png": "nearest-dog-park.webp",
-  "image2.png": "nearest-aquarium.webp",
   "image10.png": "nearest-golf-course.webp",
   "image15.png": "nearest-movie-theater.webp",
   "image6.png": "nearest-hospital.webp",

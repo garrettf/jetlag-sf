@@ -32,8 +32,7 @@ function pageTitle(id) {
 }
 
 function navActive(id) {
-  if (id === page) return true;
-  return id === "home" && ["maps", "rules", "house-rules"].includes(page);
+  return id === page;
 }
 
 function pageHeading(title) {

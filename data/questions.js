@@ -4,7 +4,7 @@ const radar = distance => ({ id: `radar-${distance.replace(/\W/g, "-")}`, title:
 const photo = (id, title, note, status = "allowed") => ({ id, title, category: "Photo", cost: "Draw 1 · keep 1", prompt: `Send a photo of ${title.toLowerCase()}.`, note, status });
 
 export const questions = [
-  matching("transit-line", "Transit line", "Ask only while riding transit. Answer yes if that exact service stops within ¼ mile of the hider’s chosen hiding station—not simply near the hider.", "hiding-zones", "modified"),
+  matching("transit-line", "Transit line", "Ask only while riding transit. Answer yes if that exact service stops within ¼ mile of the hider’s chosen hiding station—not simply near the hider.", undefined, "modified"),
   matching("station-length", "Station name length", "Ignore the word “Station”; count spaces, hyphens, ampersands, and slashes. Ignore periods in street abbreviations."),
   matching("street-path", "Street or path", "Use the official base-game definition."),
   { ...matching("district", "Supervisor district", "This is SF Supervisor District D1–D11.", "district", "modified"), prompt: "Is your supervisor district the same as mine?" },
@@ -26,7 +26,6 @@ export const questions = [
   measuring("coastline", "Coastline", "Use the nearer of the Pacific Ocean or San Francisco Bay.", undefined, "modified"),
   { ...measuring("mountain", "Hill", "This replaces the base game’s mountain definition. Use the curated list of sixteen SF hills at least 400 ft high.", "mountain", "modified"), displayTitle: "<s>Mountain</s> Hill", prompt: "Compared to me, are you closer to or further from a hill?" },
   measuring("dog-park", "Dog park", "Dog parks replace the generic park category.", "dog-park", "modified"),
-  measuring("aquarium", "Aquarium", "Allowed for measuring only.", "aquarium"),
   measuring("golf", "Golf course", "Use the same qualifying set as matching.", "golf"),
   measuring("museum", "Museum", "Use the same qualifying set as matching."),
   measuring("movie", "Movie theater", "Use the same qualifying set as matching.", "movie"),
