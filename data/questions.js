@@ -54,7 +54,7 @@ export const questions = [
 ];
 
 export const categoryInfo = {
-  Photo: { icon: "📷", phrasing: "Send me a photo of ___.", answer: "Photo / null", timing: "10 min" },
+  Photo: { icon: "📷", phrasing: "Send me a photo of ___.", answer: "Photo / cannot answer", timing: "10 min" },
   Measuring: { icon: "📏", phrasing: "Compared to me, are you closer to or further from ___?", answer: "Closer / further", timing: "5 min" },
   Matching: { icon: "🟰", phrasing: "Is your nearest ___ the same as mine?", answer: "Yes / no", timing: "5 min" },
   Radar: { icon: "📡", phrasing: "Are you within ___ of me?", answer: "Yes / no", timing: "5 min" },
