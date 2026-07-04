@@ -69,11 +69,6 @@ h3 { margin-bottom: 7px; font-size: 18px; }
 .quick-icon { flex: 0 0 auto; width: 28px; font-size: 22px; text-align: center; }
 .quick-card > b { font-size: 21px; }
 
-.alert { display: grid; grid-template-columns: auto 1fr; gap: 13px; padding: 17px; border-radius: 18px; background: #fff1ca; border: 1px solid #e8c86b; }
-.alert-icon { font-size: 22px; }
-.alert strong { display: block; margin-bottom: 4px; }
-.alert p { margin: 0; color: #665525; line-height: 1.45; }
-
 .rule-card, .guide-card, .question-card { border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
 .rule-card { overflow: hidden; }
 .rule-card summary { cursor: pointer; list-style: none; padding: 18px 48px 18px 18px; position: relative; }
