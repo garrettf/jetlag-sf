@@ -9,10 +9,9 @@ export const site = {
 export const navItems = [
   { page: "home", href: "index.html", label: "Home", icon: "⌂" },
   { page: "questions", href: "questions.html", label: "Questions", icon: "?" },
-  { page: "seekers", href: "seekers.html", label: "Seekers", icon: "◎" },
-  { page: "hiders", href: "hiders.html", label: "Hiders", icon: "◉" },
+  { page: "seekers", href: "seekers.html", label: "Seekers", icon: "🔎" },
+  { page: "hiders", href: "hiders.html", label: "Hiders", icon: "🙈" },
   { page: "atlas", href: site.atlasMap, label: "Atlas", icon: "🗺", external: true },
-  { page: "more", href: "more.html", label: "More", icon: "•••" },
 ];
 
 export const quickLinks = [

@@ -56,9 +56,9 @@ export const questions = [
 ];
 
 export const categoryInfo = {
-  Photo: { phrasing: "Send me a photo of ___.", answer: "Photo / null", timing: "10 min" },
-  Measuring: { phrasing: "Compared to me, are you closer to or further from ___?", answer: "Closer / further", timing: "5 min" },
-  Matching: { phrasing: "Is your nearest ___ the same as mine?", answer: "Yes / no", timing: "5 min" },
-  Radar: { phrasing: "Are you within ___ of me?", answer: "Yes / no", timing: "5 min" },
-  Thermometer: { phrasing: "After traveling ___, am I hotter or colder?", answer: "Hotter / colder", timing: "5 min" },
+  Photo: { icon: "📷", phrasing: "Send me a photo of ___.", answer: "Photo / null", timing: "10 min" },
+  Measuring: { icon: "📏", phrasing: "Compared to me, are you closer to or further from ___?", answer: "Closer / further", timing: "5 min" },
+  Matching: { icon: "🟰", phrasing: "Is your nearest ___ the same as mine?", answer: "Yes / no", timing: "5 min" },
+  Radar: { icon: "📡", phrasing: "Are you within ___ of me?", answer: "Yes / no", timing: "5 min" },
+  Thermometer: { icon: "🌡️", phrasing: "After traveling ___, am I hotter or colder?", answer: "Hotter / colder", timing: "5 min" },
 };

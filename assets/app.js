@@ -28,12 +28,12 @@ function shell(content) {
 }
 
 function pageTitle(id) {
-  return ({ home: "Field guide", questions: "Questions", seekers: "Seeker guide", hiders: "Hider guide", maps: "Maps", rules: "Official rules", "house-rules": "SF changes", more: "More" })[id] || site.title;
+  return ({ home: "Field guide", questions: "Questions", seekers: "Seeker guide", hiders: "Hider guide", maps: "Maps", rules: "Official rules", "house-rules": "SF changes" })[id] || site.title;
 }
 
 function navActive(id) {
   if (id === page) return true;
-  return id === "more" && ["more", "maps", "rules", "house-rules"].includes(page);
+  return id === "home" && ["maps", "rules", "house-rules"].includes(page);
 }
 
 function pageHeading(title) {
@@ -66,16 +66,16 @@ function renderGuide(role, items) {
 
 function renderQuestions() {
   const categories = Object.keys(categoryInfo);
-  const jumpOptions = currentCategory => categories.map(category => `<option value="${category.toLowerCase()}"${category === currentCategory ? " selected" : ""}>${category}</option>`).join("");
+  const jumpOptions = currentCategory => categories.map(category => `<option value="${category.toLowerCase()}"${category === currentCategory ? " selected" : ""}>${categoryInfo[category].icon} ${category}</option>`).join("");
   const categorySections = Object.entries(categoryInfo).map(([category, info]) => {
     const categoryQuestions = questions.filter(question => question.category === category);
     return `<section class="question-section" id="${category.toLowerCase()}">
-      <div class="question-section-toolbar"><h2>${category}</h2><label><span>Jump to</span><select class="question-section-select" aria-label="Jump to another question type">${jumpOptions(category)}</select></label></div>
+      <div class="question-section-toolbar"><h2><span aria-hidden="true">${info.icon}</span>${category}</h2><label><span>Jump to</span><select class="question-section-select" aria-label="Jump to another question type">${jumpOptions(category)}</select></label></div>
       <div class="question-facts"><span><b>Phrasing</b>${info.phrasing}</span><span><b>Cost</b>${categoryQuestions[0]?.cost}</span><span><b>Answer</b>${info.answer}</span><span><b>Time</b>${info.timing}</span></div>
       <div class="compact-question-list">${categoryQuestions.map(questionCard).join("")}</div>
     </section>`;
   }).join("");
-  shell(`<main class="page">${pageHeading("Questions")}<nav class="question-jump" aria-label="Question types">${categories.map(category => `<a href="#${category.toLowerCase()}">${category}</a>`).join("")}</nav>${categorySections}</main>`);
+  shell(`<main class="page">${pageHeading("Questions")}<nav class="question-jump" aria-label="Question types">${categories.map(category => `<a href="#${category.toLowerCase()}"><span aria-hidden="true">${categoryInfo[category].icon}</span>${category}</a>`).join("")}</nav>${categorySections}</main>`);
   document.querySelectorAll(".question-section-select").forEach(select => select.addEventListener("change", () => {
     location.hash = select.value;
   }));
@@ -109,14 +109,4 @@ function renderRules() {
   shell(`<main class="page"><article class="official-rules">${officialRulesHtml}</article></main>`);
 }
 
-function renderMore() {
-  const links = [
-    ["house-rules.html", "SF rule changes", "Overrides, clarifications, and local definitions"],
-    ["maps.html", "Maps + diagrams", "Voronoi maps and hiding-zone references"],
-    ["rules.html", "Official game rules", "Readable full copy of the base rules"],
-    ["questions.html", "Allowed question list", "Costs, wording, and local notes"],
-  ];
-  shell(`<main class="page">${pageHeading("More")}<div class="more-list">${links.map(([href, title, text]) => `<a class="more-link" href="${href}"><div><h3>${title}</h3><span>${text}</span></div></a>`).join("")}</div></main>`);
-}
-
-({ home: renderHome, questions: renderQuestions, seekers: () => renderGuide("Seeker", seekerRules), hiders: () => renderGuide("Hider", hiderRules), maps: renderMaps, rules: renderRules, "house-rules": renderHouseRules, more: renderMore })[page]?.();
+({ home: renderHome, questions: renderQuestions, seekers: () => renderGuide("Seeker", seekerRules), hiders: () => renderGuide("Hider", hiderRules), maps: renderMaps, rules: renderRules, "house-rules": renderHouseRules })[page]?.();
