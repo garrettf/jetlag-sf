@@ -13,7 +13,7 @@ function shell(content) {
   document.title = `${pageTitle(page)} · ${site.title}`;
   document.body.insertAdjacentHTML("afterbegin", `
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="${site.title} home">
+      <a class="brand" href="./" aria-label="${site.title} home">
         <span class="brand-mark">JL</span>
         <span class="brand-copy"><strong>${site.title}</strong></span>
       </a>
