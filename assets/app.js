@@ -59,7 +59,7 @@ function renderGuide(role, items) {
   const isHider = role === "Hider";
   shell(`<main class="page">${pageHeading(`${role} reference`)}
     <div class="guide-list">${items.map(item => `<article class="guide-card"><div><h3>${item.title}</h3><p>${item.text}</p></div></article>`).join("")}</div>
-    ${isHider ? `<section class="section"><div class="alert"><span class="alert-icon">📷</span><div><strong>Photo rule</strong><p>Before endgame, pre-shoot anywhere inside your zone. During endgame, only send photos taken at your final spot.</p></div></div></section>` : `<section class="section"><div class="alert"><span class="alert-icon">◎</span><div><strong>Endgame check</strong><p>You trigger endgame only when off transit inside the zone. Once triggered, it stays on.</p></div></div></section>`}
+    ${isHider ? `<section class="section"><div class="alert"><span class="alert-icon">📷</span><div><strong>Photo rule</strong><p>Before endgame, pre-shoot anywhere inside your zone. During endgame, only send photos taken at your final spot.</p></div></div></section>` : ""}
     <div class="action-row"><a class="button" href="questions.html">Open questions</a><a class="button secondary" href="maps.html">Open maps</a></div>
   </main>`);
 }
