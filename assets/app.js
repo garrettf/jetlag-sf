@@ -69,6 +69,7 @@ function renderQuestions() {
     return `<section class="question-section" id="${category.toLowerCase()}">
       <div class="question-section-toolbar"><h2><span aria-hidden="true">${info.icon}</span>${category}</h2><label><span>Jump to</span><select class="question-section-select" aria-label="Jump to another question type">${jumpOptions(category)}</select></label></div>
       <div class="question-facts"><span><b>Phrasing</b>${info.phrasing}</span><span><b>Cost</b>${categoryQuestions[0]?.cost}</span><span><b>Answer</b>${info.answer}</span><span><b>Time</b>${info.timing}</span></div>
+      ${info.clarifications ? `<details class="category-clarifications"><summary>Photo rules and clarifications</summary><ul>${info.clarifications.map(clarification => `<li>${clarification}</li>`).join("")}</ul></details>` : ""}
       <div class="compact-question-list">${categoryQuestions.map(questionCard).join("")}</div>
     </section>`;
   }).join("");

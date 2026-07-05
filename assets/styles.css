@@ -102,6 +102,11 @@ h3 { margin-bottom: 7px; font-size: 18px; }
 .question-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--line); }
 .question-section-toolbar + .question-facts { margin-top: 8px; }
 .question-facts + .compact-question-list { margin-top: 8px; }
+.category-clarifications { margin-top: 8px; border: 1px solid var(--line); border-radius: 12px; background: #fff7dd; }
+.category-clarifications summary { cursor: pointer; padding: 11px 13px; font-size: 13px; font-weight: 850; }
+.category-clarifications ul { margin: 0; padding: 0 15px 13px 32px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+.category-clarifications li + li { margin-top: 7px; }
+.category-clarifications + .compact-question-list { margin-top: 8px; }
 .question-facts span { padding: 9px 10px; background: var(--surface); color: var(--muted); font-size: 12px; line-height: 1.35; }
 .question-facts span:first-child { grid-column: 1 / -1; }
 .question-facts b { display: block; margin-bottom: 2px; color: var(--ink); font-size: 9px; text-transform: uppercase; letter-spacing: .08em; }

@@ -38,9 +38,9 @@ export const questions = [
   { id: "thermometer-half", title: "½-mile thermometer", category: "Thermometer", cost: "Draw 2 · keep 1", prompt: "After traveling ½ mile, am I hotter or colder?", note: "Send the starting pin before moving, then a second pin after traveling at least ½ mile as the crow flies.", status: "allowed" },
   { id: "thermometer-three", title: "3-mile thermometer", category: "Thermometer", cost: "Draw 2 · keep 1", prompt: "After traveling 3 miles, am I hotter or colder?", note: "Send the starting pin before moving, then a second pin after traveling at least 3 miles as the crow flies.", status: "allowed" },
 
-  photo("building-station", "any building visible from the transit station", "Stand at the approved station/stop. Include the roof and both sides; top of building in the top third."),
-  photo("widest-street", "the widest street in your zone", "Include both sides of the street."),
-  photo("tree", "a tree", "Include the entire tree."),
+  photo("building-station", "any building visible from the transit station", "Stand at the approved station/stop. Include the roof and two opposite edges of one visible face of the building; showing tiny portions of two adjacent faces at a corner does not count. Keep the top of the building in the top third of the frame."),
+  photo("widest-street", "the widest street in your zone", "“Widest” means the entire street, including divided sections, measured by counting lanes outside intersections. The photo must include both curbs or equivalent. Move within the zone to include both sides if necessary; within those constraints, choose the least identifiable viewpoint and framing available. In endgame, this may be impossible to answer from the final spot."),
+  photo("tree", "a tree", "Include the entire tree, including where it meets the ground. If no fully visible tree exists, photograph the tree with the greatest reasonably visible portion and include whatever obscures its bottom."),
   photo("tallest-sightline", "the tallest structure in your current sightline", "Tallest from the hider’s perspective. Include the top and both sides."),
   photo("you", "you", "Selfie mode, arm extended, perpendicular to the ground, default lens, no zoom."),
   photo("sky", "the sky", "Place the phone on the ground and shoot straight up with no zoom."),
@@ -54,7 +54,17 @@ export const questions = [
 ];
 
 export const categoryInfo = {
-  Photo: { icon: "📷", phrasing: "Send me a photo of ___.", answer: "Photo / cannot answer", timing: "10 min" },
+  Photo: {
+    icon: "📷",
+    phrasing: "Send me a photo of ___.",
+    answer: "Photo / cannot answer",
+    timing: "10 min",
+    clarifications: [
+      "Make the best reasonable attempt to provide an unobscured photo matching the question’s requirements. Within those constraints, the hider may choose the least useful subject, viewpoint, background, zoom, and framing for the seekers.",
+      "If no subject fully satisfies the requirement, use the closest reasonable option and show as much of the requested subject as possible. For example, choose a mostly visible tree over a mostly obscured one, but no precise measurement is required when options are close.",
+      "Movement needed to meet a photo’s requirements is allowed only before endgame and only within the hiding zone. During endgame, the photo must be possible from the final fixed hiding spot; otherwise the hider may answer that they cannot answer.",
+    ],
+  },
   Measuring: { icon: "📏", phrasing: "Compared to me, are you closer to or further from ___?", answer: "Closer / further", timing: "5 min" },
   Matching: { icon: "🟰", phrasing: "Is your nearest ___ the same as mine?", answer: "Yes / no", timing: "5 min" },
   Radar: { icon: "📡", phrasing: "Are you within ___ of me?", answer: "Yes / no", timing: "5 min" },
